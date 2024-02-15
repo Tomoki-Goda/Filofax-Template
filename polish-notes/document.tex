@@ -1,0 +1,18 @@
+\documentclass{article}
+\usepackage{xcolor}
+
+\usepackage[]{pdfpages}
+\usepackage[a4paper,landscape]{geometry}
+\usepackage{tikz}
+\usepackage{float}
+
+\renewcommand\fbox{\fcolorbox{black!25}{white}}
+	
+\begin{document}
+
+	\foreach \i in {1,2}
+	{
+	\includepdf[frame=true,noautoscale=true,nup=3x1,pages={\fpeval{\i*6-5},\fpeval{\i*6-3},\fpeval{\i*6-1},\fpeval{\i*6},\fpeval{\i*6-2},\fpeval{\i*6-4}},delta=5 0]{./polish-table.pdf}
+	}
+%	\includepdf[noautoscale=true,signature=4,frame=true]{polish-table.pdf}
+\end{document}
